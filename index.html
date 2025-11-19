@@ -60,6 +60,15 @@
       display: block;
     }
 
+    /* Specific class to correct orientation for images that were uploaded upside-down */
+    .rotate-upright {
+      transform: rotate(180deg);
+      /* If you need smoother rendering in some browsers:
+         -webkit-transform: rotate(180deg);
+         -webkit-backface-visibility: hidden;
+      */
+    }
+
     /* Small screen tweaks */
     @media (max-width: 640px) {
       .container { padding-left: 1rem; padding-right: 1rem; }
@@ -176,10 +185,21 @@
             <ul class="list-disc pl-5 space-y-1">
               <li id="edu1">Bachelor’s Degree in Information Technology – Sana’a University (2026-2025)</li>
               <li id="edu2">TOEFL Certificate – YALI Institute (2025)</li>
+              <li id="edu3">Laravel Web Development Course – Faculty of Computer & Information Technology, Sana’a University (April 2025)</li>
             </ul>
 
-            <div class="mt-4 mr-4">
-              <img src="./MyTOFELCertificate.jpg" alt="TOEFL Certificate" loading="lazy" class="w-full rounded-lg responsive-img">
+            <div class="mt-4 mr-4 grid md:grid-cols-2 gap-4">
+              <!-- TOEFL certificate (existing) -->
+              <div>
+                <img src="./MyTOFELCertificate.jpg" alt="TOEFL Certificate" loading="lazy" class="w-full rounded-lg responsive-img">
+              </div>
+
+              <!-- New Laravel certificate: apply rotate-upright to display it correctly if the uploaded image is upside-down -->
+              <div>
+                <!-- If the image file you uploaded is upside down, this class rotates it upright for display.
+                     For a permanent fix, rotate the image file locally and overwrite ./LaravelCertificate.jpg -->
+                <img src="./LaravelCertificate.jpg" alt="Laravel Certificate - Sana'a University" loading="lazy" class="w-full rounded-lg responsive-img rotate-upright">
+              </div>
             </div>
           </div>
 
@@ -213,7 +233,8 @@
         proj1Desc: "Full-stack web application",
         eduTitle: "Education",
         edu1: "Bachelor’s Degree in Information Technology – Sana’a University (2026-2025)",
-        edu2: "TOEFL Certificate – YALI Institute (2025)"
+        edu2: "TOEFL Certificate – YALI Institute (2025)",
+        edu3: "Laravel Web Development Course – Faculty of Computer & Information Technology, Sana’a University (April 2025)"
       },
       ar: {
         name: "بشار محمود رسام ردمان",
@@ -237,7 +258,8 @@
         proj1Desc: "تطبيق ويب متكامل",
         eduTitle: "التعليم",
         edu1: "بكالوريوس تقنية معلومات – جامعة صنعاء (2026-2025)",
-        edu2: "شهادة TOEFL – معهد يالي (2025)"
+        edu2: "شهادة TOEFL – معهد يالي (2025)",
+        edu3: "دورة تطوير ويب Laravel – كلية الحاسوب وتكنولوجيا المعلومات، جامعة صنعاء (أبريل 2025)"
       }
     };
 
@@ -268,6 +290,11 @@
       document.getElementById("edu-title").innerText = t.eduTitle;
       document.getElementById("edu1").innerText = t.edu1;
       document.getElementById("edu2").innerText = t.edu2;
+      // if edu3 exists in translation
+      if (t.edu3) {
+        const e3 = document.getElementById("edu3");
+        if (e3) e3.innerText = t.edu3;
+      }
       document.body.dir = lang === "ar" ? "rtl" : "ltr";
 
       // Adjust document language attribute for accessibility
