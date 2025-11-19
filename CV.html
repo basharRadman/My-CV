@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>User Profile</title>
-  <script src="table.full.min.js"></script>
+
+  <!-- Tailwind (CDN) so your utility classes work on GitHub Pages -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     body {
@@ -45,7 +48,7 @@
   </style>
 </head>
 <body class="bg-gray-50">
-  <!-- زر اللغة -->
+  <!-- Language toggle -->
   <button id="lang-toggle" class="lang-btn">عربي</button>
 
   <div class="container mx-auto px-4 py-12 max-w-6xl">
@@ -55,8 +58,8 @@
         <div class="profile-card bg-white rounded-2xl p-6">
           <div class="flex flex-col items-center">
             <div class="relative mb-4">
-              <img src="IMG_20241231_194832_426.jpg" 
-                   alt="Profile Photo" 
+              <img src="IMG_20241231_194832_426.jpg"
+                   alt="Profile Photo"
                    class="w-40 h-40 rounded-full object-cover border-4 border-indigo-100">
               <div class="absolute bottom-2 right-2 w-8 h-8 bg-green-500 rounded-full border-2 border-white"></div>
             </div>
@@ -110,7 +113,7 @@
 
             <h3 id="bio-title" class="text-lg font-semibold text-gray-800 mt-8 mb-4">Bio</h3>
             <p id="bio-text" class="text-gray-700 leading-relaxed">
-             An Information Technology graduate from Sana’a University with extensive experience in developing systems and applications using Laravel (PHP) and JavaScript. Skilled in delivering innovative technical solutions that meet user needs and align with business requirements. Proficient in requirements analysis, and a TOEFL certificate holder from YALI Institute. Served as a Team Leader for 4 years, managing teams and ensuring successful project delivery.
+              An Information Technology graduate from Sana’a University with experience in developing systems and applications using Laravel (PHP) and JavaScript.
             </p>
           </div>
 
@@ -123,45 +126,41 @@
           </div>
 
           <!-- Projects -->
-            <div class="tab-content" id="projects-tab">
-                        <h3  id="proj-title" class="text-lg font-semibold text-gray-800 mb-4">Projects</h3>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="border border-gray-200 rounded-lg p-4 hover:border-indigo-200 transition-colors">
-                                <div class="mb-3">
-                                    <img src="hero-bg.jpg" alt="Screenshot of Task Manager application" class="w-full rounded-lg">
-                                </div>
-                                <h4 id="proj1-title"class="font-semibold text-gray-800 mb-1">Hospatal Appointment Pro</h4>
-                                <p class="text-gray-600 text-sm mb-2" id="proj1-desc">Full-stack Wep application</p>
-                                <p class="text-gray-500 text-xs">Laravel • js • mysql</p>
-
-                               <div> 
-                                <div id="skills-list" class="flex flex-wrap gap-2">
-                                     <span class="skill-badge bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full"><a href="http://Githup"> Project-link</a></span>
-             
-                            </div>
-                          </div>
-                         </div>
-                    </div>
-                    </div>
-         
-
-          <!-- Education -->
-           
-          <div class="tab-content" id="education-tab">
-            <h3 id="edu-title" class="text-lg font-semibold text-gray-800 mb-4">Education</h3>
-            
-            <ul>
-              <li id="edu1">Bachelor’s Degree in Information Technology – Sana’a University (2021-2025)</li>
-              <br>
-              <li > <li id="edu2">TOEFL Certificate – YALI Institute (2025)</li> 
-                <div class="mr-4">
-                 <img src="MyTOFELCertificate.jpg" alt="Stanford University logo" class="w-full rounded-lg">
+          <div class="tab-content" id="projects-tab">
+            <h3 id="proj-title" class="text-lg font-semibold text-gray-800 mb-4">Projects</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="border border-gray-200 rounded-lg p-4 hover:border-indigo-200 transition-colors">
+                <div class="mb-3">
+                  <img src="hero-bg.jpg" alt="Screenshot of Task Manager application" class="w-full rounded-lg">
                 </div>
-              </li>
-            </ul>
+                <h4 id="proj1-title" class="font-semibold text-gray-800 mb-1">Hospital Appointment Pro</h4>
+                <p class="text-gray-600 text-sm mb-2" id="proj1-desc">Full-stack web application</p>
+                <p class="text-gray-500 text-xs">Laravel • JS • MySQL</p>
+
+                <div>
+                  <div id="proj-skills-list" class="flex flex-wrap gap-2">
+                    <span class="skill-badge bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full">
+                      <a href="#" target="_blank" rel="noopener noreferrer">Project link</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
+          <!-- Education -->
+          <div class="tab-content" id="education-tab">
+            <h3 id="edu-title" class="text-lg font-semibold text-gray-800 mb-4">Education</h3>
 
+            <ul>
+              <li id="edu1">Bachelor’s Degree in Information Technology – Sana’a University (2021-2025)</li>
+              <li id="edu2">TOEFL Certificate – YALI Institute (2025)</li>
+            </ul>
+
+            <div class="mt-4 mr-4">
+              <img src="MyTOFELCertificate.jpg" alt="TOEFL Certificate" class="w-full rounded-lg">
+            </div>
+          </div>
 
         </div>
       </div>
@@ -169,8 +168,7 @@
   </div>
 
   <script>
-    
-    // الترجمة
+    // Translations
     const translations = {
       en: {
         name: "Bashar Mahmoud Radman",
@@ -186,14 +184,13 @@
         phone: "Phone:",
         birthday: "Birthday:",
         bioTitle: "Bio",
-        bio: "An Information Technology graduate from Sana’a University  with extensive experience in developing systems and applications using Laravel (PHP) and JavaScript. Skilled in delivering innovative technical solutions that meet user needs and align with business requirements. Proficient in requirements analysis, and a TOEFL certificate holder from YALI Institute. Served as a Team Leader for 4 years, managing teams and ensuring successful project delivery.",
+        bio: "An Information Technology graduate from Sana’a University with extensive experience in developing systems and applications using Laravel (PHP) and JavaScript.",
         expTitle: "Work Experience",
         expText: "Team Leader for 4 years, developed leadership skills, managed cross-functional teams, and supervised projects from planning to delivery ensuring quality outcomes.",
         projTitle: "Projects",
         proj1Title: "Hospital Appointment Pro",
         proj1Desc: "Full-stack web application",
         eduTitle: "Education",
-        edu2img:"MyTOFELCertificate.jpg",
         edu1: "Bachelor’s Degree in Information Technology – Sana’a University (2021-2025)",
         edu2: "TOEFL Certificate – YALI Institute (2025)"
       },
@@ -211,14 +208,13 @@
         phone: "رقم الهاتف:",
         birthday: "تاريخ الميلاد:",
         bioTitle: "السيرة الذاتية",
-        bio: "خريج كلية الحاسوب – جامعة صنعاء، بخبرة واسعة في تطوير الأنظمة باستخدام Laravel (PHP) و JavaScript. متمكن في تحليل المتطلبات وصياغتها بشكل احترافي. حاصل على شهادة TOEFL من معهد يالي. عملت كقائد فريق لمدة أربع سنوات مما منحني خبرة في القيادة وإدارة المشاريع وضمان تحقيق الأهداف.",
+        bio: "خريج كلية الحاسوب – جامعة صنعاء، بخبرة في تطوير الأنظمة باستخدام Laravel (PHP) و JavaScript.",
         expTitle: "الخبرات العملية",
-        expText: "قائد فريق لمدة 4 سنوات، طورت مهارات القيادة، وأدرت فرق عمل متعددة التخصصات، وأشرفت على المشاريع من التخطيط حتى التسليم مع ضمان الجودة.",
+        expText: "قائد فريق لمدة 4 سنوات، طورت مهارات القيادة وأدرت فرق عمل متعددة التخصصات.",
         projTitle: "المشاريع",
         proj1Title: "نظام مواعيد المستشفى",
         proj1Desc: "تطبيق ويب متكامل",
         eduTitle: "التعليم",
-        edu2img:"MyTOFELCertificate.jpg",
         edu1: "بكالوريوس تقنية معلومات – جامعة صنعاء (2021-2025)",
         edu2: "شهادة TOEFL – معهد يالي (2025)"
       }
@@ -228,7 +224,6 @@
     const langBtn = document.getElementById("lang-toggle");
 
     function updateLang(lang) {
-        
       const t = translations[lang];
       document.getElementById("name").innerText = t.name;
       document.getElementById("role").innerText = t.role;
@@ -260,39 +255,43 @@
       updateLang(currentLang);
       langBtn.innerText = currentLang === "en" ? "عربي" : "English";
     });
-       // Tab functionality
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const tabId = this.getAttribute('data-tab');
-                    
-                    // Remove active class from all buttons and contents
-                    tabButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.classList.remove('text-indigo-600');
-                        btn.classList.add('text-gray-500');
-                    });
-                    
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    // Add active class to clicked button and corresponding content
-                    this.classList.add('active');
-                    this.classList.add('text-indigo-600');
-                    this.classList.remove('text-gray-500');
-                    
-                    document.getElementById(tabId + '-tab').classList.add('active');
-                });
-            });
-            
-            // Edit profile button functionality
-            const editButton = document.getElementById('edit-profile-btn');
-            editButton.addEventListener('click', function() {
-                alert('Edit profile functionality would open a modal in a real application.');
-            });
+
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const tabId = this.getAttribute('data-tab');
+
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.classList.remove('text-indigo-600');
+          btn.classList.add('text-gray-500');
+        });
+
+        tabContents.forEach(content => {
+          content.classList.remove('active');
+        });
+
+        // Add active class to clicked button and corresponding content
+        this.classList.add('active');
+        this.classList.add('text-indigo-600');
+        this.classList.remove('text-gray-500');
+
+        const target = document.getElementById(tabId + '-tab');
+        if (target) target.classList.add('active');
+      });
+    });
+
+    // Edit profile button functionality (only attach if it exists)
+    const editButton = document.getElementById('edit-profile-btn');
+    if (editButton) {
+      editButton.addEventListener('click', function() {
+        alert('Edit profile functionality would open a modal in a real application.');
+      });
+    }
 
     // Initialize
     updateLang("en");
